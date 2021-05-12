@@ -1,9 +1,13 @@
+import { IParseable } from "./IParseable";
+
 /**
+ * Search callback passed to `.pre`, `.post`, and `.breadth`.
  * @public
  */
 export type SearchCallback<T> = (node: TreeNode<T>) => (boolean | void);
 
 /**
+ * Search methods on TreeNode, passed to `.flatten`.
  * @public
  */
 export type SearchStrategy = 'pre' | 'post' | 'breadth';
@@ -18,11 +22,26 @@ export class TreeNode<T> {
     public children: TreeNode<T>[] = []
   ) {}
 
+  /**
+   * Parses object into a tree and returns the root node.
+   */
+  static parse<T>(tree: IParseable<T>): TreeNode<T> {
+    const node = new TreeNode(tree.model);
+    tree.children.forEach((child) => node.add(TreeNode.parse(child)));
+    return node;
+  }
+
+  /**
+   * Index of the node among its siblings.
+   */
   get index(): number {
     if (!this.parent) return 0;
     return this.parent.children.indexOf(this);
   }
 
+  /**
+   * Returns true if the node has children.
+   */
   get hasChildren(): boolean {
     return this.children.length > 0;
   }
@@ -62,7 +81,7 @@ export class TreeNode<T> {
   }
 
   /**
-   * Returns list of nodes to the root
+   * Returns list of nodes to the root.
    */
   path(): TreeNode<T>[] {
     const path: TreeNode<T>[] = [];
@@ -133,7 +152,7 @@ export class TreeNode<T> {
   }
 
   /**
-   * Returns a list of nodes
+   * Returns a list of nodes.
    */
   flatten(method: SearchStrategy): TreeNode<T>[] {
     const list: TreeNode<T>[] = [];

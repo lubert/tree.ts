@@ -1,9 +1,9 @@
-# tree.ts
-Simple Typescript tree implementation
+# treenode.ts
+Tree-like data structure for typescript.
 
 ## Installation
 ```
-npm install tree.ts
+npm install treenode.ts
 ```
 
-## [Documentation](./docs/tree.ts.md)
+## [Documentation](./docs/treenode.ts.md)

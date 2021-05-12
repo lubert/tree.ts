@@ -8,7 +8,6 @@
 
 |  Class | Description |
 |  --- | --- |
-|  [Tree](./tree.ts.tree.md) |  |
 |  [TreeNode](./tree.ts.treenode.md) |  |
 
 ## Interfaces
@@ -21,6 +20,6 @@
 
 |  Type Alias | Description |
 |  --- | --- |
-|  [SearchCallback](./tree.ts.searchcallback.md) |  |
-|  [SearchStrategy](./tree.ts.searchstrategy.md) |  |
+|  [SearchCallback](./tree.ts.searchcallback.md) | Search callback passed to <code>.pre</code>, <code>.post</code>, and <code>.breadth</code>. |
+|  [SearchStrategy](./tree.ts.searchstrategy.md) | Search methods on TreeNode, passed to <code>.flatten</code>. |
 

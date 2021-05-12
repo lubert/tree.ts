@@ -1,7 +1,7 @@
 {
-  "name": "tree.ts",
+  "name": "treenode.ts",
   "version": "0.1.0",
-  "description": "Simple Typescript tree implementation",
+  "description": "Tree-like data structure for typescript",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lubert/tree.ts.git"
+    "url": "git+https://github.com/lubert/treenode.ts.git"
   },
   "files": [
     "dist"
@@ -22,9 +22,9 @@
   "author": "Lu Zhu",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lubert/tree.ts/issues"
+    "url": "https://github.com/lubert/treenode.ts/issues"
   },
-  "homepage": "https://github.com/lubert/tree.ts#readme",
+  "homepage": "https://github.com/lubert/treenode.ts#readme",
   "devDependencies": {
     "@microsoft/api-documenter": "^7.13.6",
     "@microsoft/api-extractor": "^7.15.1",

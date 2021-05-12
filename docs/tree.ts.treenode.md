@@ -22,8 +22,8 @@ export declare class TreeNode<T>
 |  Property | Modifiers | Type | Description |
 |  --- | --- | --- | --- |
 |  [children](./tree.ts.treenode.children.md) |  | [TreeNode](./tree.ts.treenode.md)<!-- -->&lt;T&gt;\[\] |  |
-|  [hasChildren](./tree.ts.treenode.haschildren.md) |  | boolean |  |
-|  [index](./tree.ts.treenode.index.md) |  | number |  |
+|  [hasChildren](./tree.ts.treenode.haschildren.md) |  | boolean | Returns true if the node has children. |
+|  [index](./tree.ts.treenode.index.md) |  | number | Index of the node among its siblings. |
 |  [model](./tree.ts.treenode.model.md) |  | T |  |
 |  [parent](./tree.ts.treenode.parent.md) |  | [TreeNode](./tree.ts.treenode.md)<!-- -->&lt;T&gt; \| null |  |
 
@@ -35,9 +35,11 @@ export declare class TreeNode<T>
 |  [breadth(callback)](./tree.ts.treenode.breadth.md) |  | Breadth-first search, return true in the callback to end iteration. |
 |  [clone()](./tree.ts.treenode.clone.md) |  | Returns a shallow-copy. |
 |  [drop()](./tree.ts.treenode.drop.md) |  | Remove current node and its children from the tree and return. |
-|  [flatten(method)](./tree.ts.treenode.flatten.md) |  | Returns a list of nodes |
+|  [flatten(method)](./tree.ts.treenode.flatten.md) |  | Returns a list of nodes. |
 |  [map(callback)](./tree.ts.treenode.map.md) |  | Iterates over a node's children and returns a new root node. |
-|  [path()](./tree.ts.treenode.path.md) |  | Returns list of nodes to the root |
+|  [parse(tree)](./tree.ts.treenode.parse.md) | <code>static</code> | Parses object into a tree and returns the root node. |
+|  [path()](./tree.ts.treenode.path.md) |  | Returns list of nodes to the root. |
 |  [post(callback)](./tree.ts.treenode.post.md) |  | Depth-first post-order search, return true in the callback to end iteration. |
 |  [pre(callback)](./tree.ts.treenode.pre.md) |  | Depth-first pre-order search, return true in the callback to end iteration. |
+|  [toObject()](./tree.ts.treenode.toobject.md) |  | Returns an object representation of the tree. |
 

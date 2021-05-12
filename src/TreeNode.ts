@@ -56,6 +56,13 @@ export class TreeNode<T> {
   }
 
   /**
+   * Add model as a child.
+   */
+  addModel(model: T): TreeNode<T> {
+    return this.add(new TreeNode<T>(model));
+  }
+
+  /**
    * Remove current node and its children from the tree and return.
    */
   drop(): TreeNode<T> {

@@ -159,4 +159,14 @@ export class TreeNode<T> {
     this[method].call(this, (node) => { list.push(node); });
     return list;
   }
+
+  /**
+   * Returns an object representation of the tree.
+   */
+  toObject(): IParseable<T> {
+    return {
+      model: this.model,
+      children: this.children.map((child) => child.toObject()),
+    };
+  }
 }

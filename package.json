@@ -1,0 +1,40 @@
+{
+  "name": "tree.ts",
+  "version": "0.1.0",
+  "description": "Simple Typescript tree implementation",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "build:api": "npm run build && api-extractor run --local --verbose",
+    "build:docs": "npm run build:api && api-documenter markdown --input ./temp --output ./docs",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "prepare": "tsc",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lubert/tree.ts.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "author": "Lu Zhu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lubert/tree.ts/issues"
+  },
+  "homepage": "https://github.com/lubert/tree.ts#readme",
+  "devDependencies": {
+    "@microsoft/api-documenter": "^7.13.6",
+    "@microsoft/api-extractor": "^7.15.1",
+    "@types/jest": "^26.0.23",
+    "@typescript-eslint/eslint-plugin": "^4.23.0",
+    "@typescript-eslint/parser": "^4.23.0",
+    "eslint": "^7.26.0",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.5.6",
+    "typescript": "^4.2.4"
+  },
+  "dependencies": {}
+}

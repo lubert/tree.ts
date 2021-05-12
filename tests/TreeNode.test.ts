@@ -1,5 +1,4 @@
 import { IParseable } from '../src/IParseable';
-import { Tree } from '../src/Tree';
 import { TreeNode, SearchStrategy } from '../src/TreeNode';
 
 describe('TreeNode', () => {
@@ -19,7 +18,7 @@ describe('TreeNode', () => {
       children: [],
     }]
   };
-  const root = Tree.parse(tree);
+  const root = TreeNode.parse(tree);
   const mapModel = <T>(node: TreeNode<T>, method: SearchStrategy) => {
     return node.flatten(method).map((node) => node.model);
   };
@@ -102,6 +101,12 @@ describe('TreeNode', () => {
   describe('.post', () => {
     it('traverses correctly', () => {
       expect(mapModel(root, 'post')).toEqual(['111', '112', '11', '12', '1']);
+    });
+  });
+
+  describe('.toObject', () => {
+    it('converts a node to an object', () => {
+      expect(tree).toEqual(root.toObject());
     });
   });
 });

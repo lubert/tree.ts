@@ -9,14 +9,14 @@ Iterates over a node's children and returns a new root node.
 <b>Signature:</b>
 
 ```typescript
-map<U>(callback: (obj: T) => U): TreeNode<U>;
+map<U>(callback: (node: TreeNode<T>) => U): TreeNode<U>;
 ```
 
 ## Parameters
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  callback | (obj: T) =&gt; U |  |
+|  callback | (node: [TreeNode](./treenode.ts.treenode.md)<!-- -->&lt;T&gt;) =&gt; U |  |
 
 <b>Returns:</b>
 

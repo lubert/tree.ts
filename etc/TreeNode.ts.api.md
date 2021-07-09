@@ -31,7 +31,7 @@ export class TreeNode<T> {
     flatten(method: SearchStrategy): TreeNode<T>[];
     get hasChildren(): boolean;
     get index(): number;
-    map<U>(callback: (obj: T) => U): TreeNode<U>;
+    map<U>(callback: (node: TreeNode<T>) => U): TreeNode<U>;
     // (undocumented)
     model: T;
     // (undocumented)

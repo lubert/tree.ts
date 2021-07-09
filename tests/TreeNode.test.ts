@@ -81,7 +81,7 @@ describe('TreeNode', () => {
 
   describe('.map', () => {
     it('returns a transformed tree', () => {
-      const numTree = root.map((model) => parseInt(model));
+      const numTree = root.map((node) => parseInt(node.model));
       expect(mapModel(numTree, 'breadth')).toEqual([1, 11, 12, 111, 112]);
     });
   });

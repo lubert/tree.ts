@@ -103,8 +103,8 @@ export class TreeNode<T> {
   /**
    * Iterates over a node's children and returns a new root node.
    */
-  map<U>(callback: (obj: T) => U): TreeNode<U> {
-    const node = new TreeNode<U>(callback(this.model));
+  map<U>(callback: (node: TreeNode<T>) => U): TreeNode<U> {
+    const node = new TreeNode<U>(callback(this));
     node.children = this.children.map((child) => {
       const newChild = child.map(callback);
       newChild.parent = node;

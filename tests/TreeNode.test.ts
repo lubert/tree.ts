@@ -30,6 +30,15 @@ describe('TreeNode', () => {
     });
   });
 
+  describe('.indices', () => {
+    it('returns the expected indices', () => {
+      expect(root.indices).toEqual([]);
+      expect(root.children[0].children[0].indices).toEqual([0,0]);
+      expect(root.children[0].children[1].indices).toEqual([0,1]);
+      expect(root.children[1].indices).toEqual([1]);
+    });
+  });
+
   describe('.hasChildren', () => {
     it('returns the expected value', () => {
       expect(root.hasChildren).toEqual(true);

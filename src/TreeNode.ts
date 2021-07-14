@@ -40,6 +40,14 @@ export class TreeNode<T> {
   }
 
   /**
+   * Indices from the root to the node.
+   */
+  get indices(): number[] {
+    if (!this.parent) return []; // Root
+    return [...this.parent.indices, this.index];
+  }
+
+  /**
    * Returns true if the node has children.
    */
   get hasChildren(): boolean {

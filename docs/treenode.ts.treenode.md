@@ -24,6 +24,7 @@ export declare class TreeNode<T>
 |  [children](./treenode.ts.treenode.children.md) |  | [TreeNode](./treenode.ts.treenode.md)<!-- -->&lt;T&gt;\[\] |  |
 |  [hasChildren](./treenode.ts.treenode.haschildren.md) |  | boolean | Returns true if the node has children. |
 |  [index](./treenode.ts.treenode.index.md) |  | number | Index of the node among its siblings. |
+|  [indices](./treenode.ts.treenode.indices.md) |  | number\[\] | Indices from the root to the node. |
 |  [model](./treenode.ts.treenode.model.md) |  | T |  |
 |  [parent](./treenode.ts.treenode.parent.md) |  | [TreeNode](./treenode.ts.treenode.md)<!-- -->&lt;T&gt; \| null |  |
 

@@ -13,10 +13,10 @@ export interface IParseable<T> {
 }
 
 // @public
-export type SearchCallback<T> = (node: TreeNode<T>) => (boolean | void);
+export type SearchCallback<T> = (node: TreeNode<T>) => boolean | void;
 
 // @public
-export type SearchStrategy = 'pre' | 'post' | 'breadth';
+export type SearchStrategy = "pre" | "post" | "breadth";
 
 // @public (undocumented)
 export class TreeNode<T> {
@@ -28,6 +28,7 @@ export class TreeNode<T> {
     children: TreeNode<T>[];
     clone(): TreeNode<T>;
     drop(): TreeNode<T>;
+    fetch(indices: number[]): TreeNode<T> | null;
     flatten(method: SearchStrategy): TreeNode<T>[];
     get hasChildren(): boolean;
     get index(): number;

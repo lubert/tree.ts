@@ -37,6 +37,7 @@ export declare class TreeNode<T>
 |  [breadth(callback)](./treenode.ts.treenode.breadth.md) |  | Breadth-first search, return true in the callback to end iteration. |
 |  [clone()](./treenode.ts.treenode.clone.md) |  | Returns a shallow-copy. |
 |  [drop()](./treenode.ts.treenode.drop.md) |  | Remove current node and its children from the tree and return. |
+|  [fetch(indices)](./treenode.ts.treenode.fetch.md) |  | Returns a node given a list of indices |
 |  [flatten(method)](./treenode.ts.treenode.flatten.md) |  | Returns a list of nodes. |
 |  [map(callback)](./treenode.ts.treenode.map.md) |  | Iterates over a node's children and returns a new root node. |
 |  [parse(tree)](./treenode.ts.treenode.parse.md) | <code>static</code> | Parses object into a tree and returns the root node. |

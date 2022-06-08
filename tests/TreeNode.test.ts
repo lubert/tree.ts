@@ -47,6 +47,7 @@ describe("TreeNode", () => {
 
   describe(".fetch", () => {
     it("returns the expected nodes", () => {
+      expect(root).toEqual(root);
       expect(root.fetch([0])).toEqual(root.children[0]);
       expect(root.fetch([0, 0])).toEqual(root.children[0].children[0]);
       expect(root.fetch([0, 1])).toEqual(root.children[0].children[1]);

@@ -4,13 +4,13 @@ import { IParseable } from "./IParseable";
  * Search callback passed to `.pre`, `.post`, and `.breadth`.
  * @public
  */
-export type SearchCallback<T> = (node: TreeNode<T>) => (boolean | void);
+export type SearchCallback<T> = (node: TreeNode<T>) => boolean | void;
 
 /**
  * Search methods on TreeNode, passed to `.flatten`.
  * @public
  */
-export type SearchStrategy = 'pre' | 'post' | 'breadth';
+export type SearchStrategy = "pre" | "post" | "breadth";
 
 /**
  * @public
@@ -171,7 +171,9 @@ export class TreeNode<T> {
    */
   flatten(method: SearchStrategy): TreeNode<T>[] {
     const list: TreeNode<T>[] = [];
-    this[method].call(this, (node) => { list.push(node); });
+    this[method].call(this, (node) => {
+      list.push(node);
+    });
     return list;
   }
 

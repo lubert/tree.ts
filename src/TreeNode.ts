@@ -96,6 +96,18 @@ export class TreeNode<T> {
   }
 
   /**
+   * Returns a node given a list of indices
+   */
+  fetch(indices: number[]): TreeNode<T> | null {
+    let node: TreeNode<T> = this;
+    for (let i of indices) {
+      node = node.children[i];
+      if (!node) return null;
+    }
+    return node || null;
+  }
+
+  /**
    * Returns list of nodes to the root.
    */
   path(): TreeNode<T>[] {

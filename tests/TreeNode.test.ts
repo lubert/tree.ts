@@ -45,6 +45,18 @@ describe("TreeNode", () => {
     });
   });
 
+  describe(".fetch", () => {
+    it("returns the expected nodes", () => {
+      expect(root.fetch([0])).toEqual(root.children[0]);
+      expect(root.fetch([0, 0])).toEqual(root.children[0].children[0]);
+      expect(root.fetch([0, 1])).toEqual(root.children[0].children[1]);
+      expect(root.fetch([0, 2])).toEqual(null);
+      expect(root.fetch([1])).toEqual(root.children[1]);
+      expect(root.fetch([1, 0])).toEqual(null);
+      expect(root.fetch([2])).toEqual(null);
+    });
+  });
+
   describe(".hasChildren", () => {
     it("returns the expected value", () => {
       expect(root.hasChildren).toEqual(true);

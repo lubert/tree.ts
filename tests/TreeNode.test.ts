@@ -110,6 +110,24 @@ describe("TreeNode", () => {
     });
   });
 
+  describe(".mapAsync", () => {
+    it("returns a transformed tree", async () => {
+      const numTree = await root.mapAsync(async (node, parent) => {
+        return new Promise((resolve) => {
+          resolve(node.model + '-' + (parent?.model || 'null'));
+        });
+      });
+      const expected = [
+        "1-null",
+        "11-1-null",
+        "12-1-null",
+        "111-11-1-null",
+        "112-11-1-null",
+      ];
+      expect(mapModel(numTree, "breadth")).toEqual(expected);
+    });
+  });
+
   describe(".breadth", () => {
     it("traverses correctly", () => {
       expect(mapModel(root, "breadth")).toEqual([

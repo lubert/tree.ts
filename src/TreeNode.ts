@@ -99,8 +99,9 @@ export class TreeNode<T> {
    * Returns a node given a list of indices
    */
   fetch(indices: number[]): TreeNode<T> | null {
+    // eslint-disable-next-line @typescript-eslint/no-this-alias
     let node: TreeNode<T> = this;
-    for (let i of indices) {
+    for (const i of indices) {
       node = node.children[i];
       if (!node) return null;
     }
@@ -130,6 +131,19 @@ export class TreeNode<T> {
       newChild.parent = node;
       return newChild;
     });
+    return node;
+  }
+
+  /**
+   * Iterates over a node's children and returns a new root node.
+   */
+  async mapAsync<U>(callback: (node: TreeNode<T>, parent?: TreeNode<U>) => Promise<U>, parent?: TreeNode<U>): Promise<TreeNode<U>>{
+    const node = new TreeNode<U>(await callback(this, parent));
+    node.children = await Promise.all(this.children.map(async (child) => {
+      const newChild = await child.mapAsync(callback, node);
+      newChild.parent = node;
+      return newChild;
+    }));
     return node;
   }
 
